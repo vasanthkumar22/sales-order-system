@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:userdb
+    driver-class-name: org.h2.Driver
+    username: admin
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+
+# Security
+jwt:
+  secret: userservice
+  issuer: "Sales Order System"
+  tokenValidity: 18000 # (5 * 60 * 60)
